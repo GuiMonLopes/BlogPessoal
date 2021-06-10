@@ -17,16 +17,38 @@ public class Usuario {
 	private long id;
 
 	@NotBlank
-	@Size(min = 2, max = 100)
+	@Size(max = 100)
 	private String nome;
 
 	@NotBlank
-	@Size(min = 5, max = 100)
+	@Size(max = 100)
 	private String usuario;
 
 	@NotBlank
-	@Size(min = 5, max = 100)
+	@Size(max = 100)
 	private String senha;
+
+	public Usuario() {
+		super();
+	}
+
+	public Usuario(@NotBlank @Size(max = 100) String nome, @NotBlank @Size(max = 100) String usuario,
+			@NotBlank @Size(max = 100) String senha) {
+		super();
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
+	
+
+	public Usuario(long id, @NotBlank @Size(max = 100) String nome, @NotBlank @Size(max = 100) String usuario,
+			@NotBlank @Size(max = 100) String senha) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
 
 	public long getId() {
 		return id;

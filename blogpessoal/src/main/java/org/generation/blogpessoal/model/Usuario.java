@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -22,7 +23,7 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotBlank
+	@NotNull
 	@Size(max = 100)
 	private String nome;
 
@@ -48,7 +49,7 @@ public class Usuario {
 		super();
 	}
 
-	public Usuario(@NotBlank @Size(max = 100) String nome, @NotBlank @Size(max = 100) String usuario,
+	public Usuario(@NotNull @Size(max = 100) String nome, @NotBlank @Size(max = 100) String usuario,
 			@NotBlank @Size(max = 100) String senha) {
 		super();
 		this.nome = nome;
@@ -57,7 +58,7 @@ public class Usuario {
 	}
 	
 
-	public Usuario(long id, @NotBlank @Size(max = 100) String nome, @NotBlank @Size(max = 100) String usuario,
+	public Usuario(long id, @NotNull @Size(max = 100) String nome, @NotBlank @Size(max = 100) String usuario,
 			@NotBlank @Size(max = 100) String senha) {
 		super();
 		this.id = id;
